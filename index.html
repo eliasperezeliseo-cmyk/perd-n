@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>perdon por la demora</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .escena {
+      position: relative;
+      width: 420px;
+      height: 600px;
+    }
+
+    /* Texto encima de la flor */
+    .mensaje {
+      position: absolute;
+      top: 35px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color:black;
+    }
+
+    .flor {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      top: 145px;
+      left: 80px;
+      animation: aparecer 1.5s ease-out;
+    }
+
+    /* Pétalos */
+    .petalo {
+      position: absolute;
+      width: 105px;
+      height: 155px;
+      left: 77px;
+      top: 45px;
+      border-radius: 50% 50% 45% 45%;
+      background: #ffd92f;
+      border: 2px solid #e6b800;
+      transform-origin: 50% 100%;
+    }
+
+    .petalo:nth-child(1)  { transform: rotate(0deg) translateY(-45px); }
+    .petalo:nth-child(2)  { transform: rotate(45deg) translateY(-45px); }
+    .petalo:nth-child(3)  { transform: rotate(90deg) translateY(-45px); }
+    .petalo:nth-child(4)  { transform: rotate(135deg) translateY(-45px); }
+    .petalo:nth-child(5)  { transform: rotate(180deg) translateY(-45px); }
+    .petalo:nth-child(6)  { transform: rotate(225deg) translateY(-45px); }
+    .petalo:nth-child(7)  { transform: rotate(270deg) translateY(-45px); }
+    .petalo:nth-child(8)  { transform: rotate(315deg) translateY(-45px); }
+
+    /* Centro */
+    .centro {
+      position: absolute;
+      width: 58px;
+      height: 58px;
+      left: 101px;
+      top: 101px;
+      border-radius: 50%;
+      background: brown;
+      border: 3px solid #d88a00;
+      z-index: 5;
+    }
+
+    /* Tallo */
+    .tallo {
+      position: absolute;
+      width: 12px;
+      height: 280px;
+      left: 124px;
+      top: 245px;
+      background: green;
+      border-radius: 10px;
+      transform: rotate(1deg);
+      transform-origin: top center;
+      z-index: -1;
+    }
+
+    /* Hoja */
+    .hoja {
+      position: absolute;
+      width: 115px;
+      height: 55px;
+      left: 115px;
+      top: 405px;
+      background: green;
+      border-radius: 100% 0 100% 0;
+      transform: rotate(-25deg);
+      border: 2px solid #176b17;
+      z-index: 2;
+    }
+
+    @keyframes aparecer {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Adaptación para celulares */
+    @media (max-width: 500px) {
+      .escena {
+        transform: scale(0.85);
+      }
+
+      .mensaje {
+        font-size: 21px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="escena">
+
+    <div class="mensaje">
+      perdon por la demora
+    </div>
+
+    <div class="flor">
+      <div class="petalo"></div>
+      <div class="petalo"></div>
+      <div class="petalo"></div>
+      <div class="petalo"></div>
+      <div class="petalo"></div>
+      <div class="petalo"></div>
+      <div class="petalo"></div>
+      <div class="petalo"></div>
+
+      <div class="centro"></div>
+    </div>
+
+    <div class="tallo"></div>
+    <div class="hoja"></div>
+
+  </div>
+
+</body>
+</html>
